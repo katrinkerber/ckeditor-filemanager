@@ -4,14 +4,14 @@ class Hooks_ckeditor extends Hooks {
   public function control_panel__add_to_head()
   {
       if (URL::getCurrent(false) == '/publish') {
-        return $this->link('contents.css');
+        return $this->css->link('contents.css');
       }
   }
 
   public function control_panel__add_to_foot()
   {
       if (URL::getCurrent(false) == '/publish') {
-        $html = $this->link('ckeditor.js');
+        $html = $this->js->link('ckeditor.js');
         
         $html .= "<script>
           function initiateCKEditors() {
